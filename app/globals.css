@@ -1,26 +1,45 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Teal Colors (inspired by logo) */
+  --primary-teal: #26A69A; /* Main teal from the logo */
+  --hover-teal: #00695C; /* Darker teal for hover effects */
+  --light-teal: #B2DFDB; /* Lighter teal for backgrounds or accents */
+  --dark-teal: #004D40; /* Deep teal for strong contrasts */
+
+  /* Accent Green Colors (from logo) */
+  --accent-green: #2E7D32; /* Dark green from the logo */
+  --light-green: #81C784; /* Lighter green for highlights */
+
+  /* Neutral Colors */
+  --black: #212121; /* Slightly lighter black for text */
+  --gray: #757575; /* Medium gray for secondary text */
+  --light-gray: #F5F5F5; /* Soft gray background */
+  --white: #FFFFFF; /* Pure white for backgrounds */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  --transparent-black: rgba(0, 0, 0, 0.4); /* Overlay transparency */
+  --transparent-white: rgba(255, 255, 255, 0.1); /* Subtle white overlay */
+
+  /* Gradient for decorative elements */
+  --gradient-teal-green: linear-gradient(45deg, #26A69A, #2E7D32);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply font-sans m-0 p-0 box-border relative overflow-x-hidden w-screen bg-[var(--light-gray)];
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Updated hover underline utility to use teal */
+  .hover-underline {
+    @apply relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-5px] after:left-1/2 after:-translate-x-1/2 after:bg-[var(--primary-teal)] after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+/* Custom animations */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
