@@ -21,10 +21,10 @@ const Header = () => {
       {/* Desktop Navigation */}
       <nav className="hidden md:flex">
         <ul className="flex gap-5 m-0 p-0 list-none">
-          {['Home', 'About us', 'Services', 'Products', 'Projects'].map((item) => (
+          {['Home', 'About', 'Services', 'Products', 'Projects'].map((item) => (
             <li key={item}>
               <Link
-                href={`/${item.toLowerCase().replace(' ', '-')}.html`}
+                href={`/${item.toLowerCase()=== 'home' ? '' : item.toLowerCase()}`}
                 className="text-[var(--black)] font-medium hover:text-[var(--primary-teal)] hover-underline transition-colors duration-300"
               >
                 {item}
@@ -35,7 +35,7 @@ const Header = () => {
       </nav>
 
       {/* Contact Button (Desktop) */}
-      <Link href="/contact.html">
+      <Link href="/contact">
         <button className="hidden md:block bg-[var(--primary-teal)] text-[var(--white)] px-5 py-2 rounded-md hover:bg-[var(--hover-teal)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
           Contact us
         </button>
@@ -44,10 +44,10 @@ const Header = () => {
       {/* Mobile Navigation */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-[var(--white)] py-2 px-4 border-t border-gray-100 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-2xl z-[1000] flex justify-between">
         {[
-          { href: 'index.html', icon: 'M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2zm0 2.83L19.17 12h-1.67v8h-3v-6H9.5v6h-3v-8H4.83L12 4.83z', label: 'Home' },
-          { href: 'about.html', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v2h2V7zm0 4h-2v6h2v-6z', label: 'About' },
-          { href: 'contact.html', icon: 'M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z', label: 'Contact' },
-          { href: '#', icon: 'M3 4h18v2H3zm0 7h18v2H3zm0 7h18v2H3z', label: 'Menu', onClick: toggleOverlayMenu },
+          { href: '/', icon: 'M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2zm0 2.83L19.17 12h-1.67v8h-3v-6H9.5v6h-3v-8H4.83L12 4.83z', label: 'Home' },
+          { href: '/about', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v2h2V7zm0 4h-2v6h2v-6z', label: 'About' },
+          { href: '/contact', icon: 'M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z', label: 'Contact' },
+          { href: '/', icon: 'M3 4h18v2H3zm0 7h18v2H3zm0 7h18v2H3z', label: 'Menu', onClick: toggleOverlayMenu },
         ].map((nav) => (
           <Link
             key={nav.label}
@@ -103,7 +103,7 @@ const Header = () => {
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <Link
-                  href={`/${item.toLowerCase()}.html`}
+                  href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
                   className="text-[var(--white)] text-2xl md:text-3xl font-semibold block py-2 px-5 relative hover:text-[var(--primary-teal)] hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(38,166,154,0.3)] transition-all duration-300 before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-0 before:h-[2px] before:bg-[var(--primary-teal)] before:transition-all before:duration-300 hover:before:w-[80%]"
                   onClick={toggleOverlayMenu}
                 >
