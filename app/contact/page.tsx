@@ -12,8 +12,28 @@ const Contact = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+  const [bubbles, setBubbles] = useState<Array<{
+    width: number;
+    height: number;
+    top: number;
+    left: number;
+    animationDelay: number;
+    animationDuration: number;
+  }>>([]);
 
   useEffect(() => {
+    // Create random bubbles only on the client side
+    setBubbles(
+      Array.from({ length: 5 }, () => ({
+        width: Math.random() * 100 + 100,
+        height: Math.random() * 100 + 100,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        animationDelay: Math.random() * 5,
+        animationDuration: Math.random() * 4 + 8
+      }))
+    );
+
     // Add a small delay to ensure all sections are in the DOM
     setTimeout(() => {
       document.querySelectorAll('.section').forEach(section => {
@@ -101,17 +121,17 @@ const Contact = () => {
 
       {/* Animated Background */}
       <div className="fixed w-full h-full top-0 left-0 -z-10 overflow-hidden bg-gradient-to-b from-white to-gray-100">
-        {[1, 2, 3, 4, 5].map((_, index) => (
+        {bubbles.map((bubble, index) => (
           <div 
             key={index}
             className="absolute rounded-full bg-[var(--transparent-white)] opacity-20 animate-float"
             style={{
-              width: `${Math.random() * 100 + 100}px`,
-              height: `${Math.random() * 100 + 100}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${Math.random() * 4 + 8}s`
+              width: `${bubble.width}px`,
+              height: `${bubble.height}px`,
+              top: `${bubble.top}%`,
+              left: `${bubble.left}%`,
+              animationDelay: `${bubble.animationDelay}s`,
+              animationDuration: `${bubble.animationDuration}s`
             }}
           />
         ))}
@@ -305,7 +325,6 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          
         </div>
       </section>
     </>
