@@ -18,7 +18,7 @@ const About = () => {
           <div className="w-full md:w-1/2 space-y-8">
             <div className="p-6 rounded-lg border-l-4 border-[var(--primary-teal)] bg-white shadow-md">
               <p className="text-lg leading-relaxed text-[var(--gray)]">
-                At <span className="font-semibold text-[var(--primary-teal)]">Zephyrix Tech</span>, we're passionate about building innovative products that make a difference. As a product-based company, we're dedicated to creating cutting-edge solutions that solve real-world problems. But that's not all - we're also committed to empowering the next generation of tech leaders through our MERN stack training programs.
+                At <span className="font-semibold text-[var(--primary-teal)]">Zephyrix Tech</span>, we&apos;re passionate about building innovative products that make a difference. As a product-based company, we&apos;re dedicated to creating cutting-edge solutions that solve real-world problems. But that&apos;s not all - we&apos;re also committed to empowering the next generation of tech leaders through our MERN stack training programs.
               </p>
             </div>
             
@@ -32,7 +32,7 @@ const About = () => {
                   <h3 className="text-2xl font-bold ml-4 text-[var(--black)]">Our Mission</h3>
                 </div>
                 <p className="text-[var(--gray)] leading-relaxed pl-14">
-                  Our mission is to harness the power of technology to drive positive change in the world. We believe that by combining innovative thinking with technical expertise, we can create solutions that make a real difference in people's lives.
+                  Our mission is to harness the power of technology to drive positive change in the world. We believe that by combining innovative thinking with technical expertise, we can create solutions that make a real difference in people&apos;s lives.
                 </p>
               </div>
               

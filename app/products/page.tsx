@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import {  useEffect } from 'react';
 import Head from 'next/head';
 import Banner from '@/components/Banner';
 import projectsData from '../data/project.data';

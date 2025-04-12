@@ -1,6 +1,6 @@
 // pages/about.jsx
 'use client';
-import { useState, useEffect } from 'react';
+import {  useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import teamMembers from '../data/team.data';
@@ -99,7 +99,7 @@ export default function About() {
                 We are dedicated to transforming businesses through innovative software solutions. Our mission is to empower organizations with cutting-edge technology that drives growth, efficiency, and success in the digital age.
               </p>
               <p className="text-gray-700">
-                With over a decade of experience, we've helped hundreds of businesses across multiple industries modernize their operations and achieve their digital transformation goals.
+                With over a decade of experience, we&apos;ve helped hundreds of businesses across multiple industries modernize their operations and achieve their digital transformation goals.
               </p>
             </div>
             <div className="flex-1 flex justify-center">

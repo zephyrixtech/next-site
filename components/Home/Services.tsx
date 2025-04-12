@@ -2,7 +2,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-const ServiceCard = ({ icon, title, description }: {icon: React.ReactNode, title: string, description: string}) => (
+interface Service {
+  icon: React.ReactNode; 
+  title: string;
+  description?: string;
+  // Add other properties as needed
+}
+
+
+const ServiceCard = ({ icon, title, description }: {icon: React.ReactNode, title: string, description?: string}) => (
   <div className="service-card min-w-[280px] md:min-w-[320px] p-6 bg-white rounded-xl shadow-lg text-center mx-3 my-4">
     <div className="service-icon bg-[rgba(38,166,154,0.1)] w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-110">
       {icon}
@@ -16,7 +24,7 @@ const ServiceCard = ({ icon, title, description }: {icon: React.ReactNode, title
 );
 
 const InfiniteMovingCards = () => {
-  const [duplicatedServices, setDuplicatedServices] = useState<any[]>([]);
+  const [duplicatedServices, setDuplicatedServices] = useState<Service[]>([]);
   const [width, setWidth] = useState(0);
   const carousel = useRef<HTMLDivElement>(null);
 

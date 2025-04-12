@@ -1,6 +1,6 @@
 'use client';
 import Banner from '@/components/Banner';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,12 +57,12 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     

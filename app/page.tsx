@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import TeamCard from '@/components/Home/TeamCard';
 import teamMembers from './data/team.data';
 import About from '@/components/Home/About';
@@ -11,7 +11,7 @@ import ContactUs from '@/components/Home/Contact';
 import Hero from '@/components/Home/Hero';
 
 const Home = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Handle scroll animation for fade-in sections
   useEffect(() => {

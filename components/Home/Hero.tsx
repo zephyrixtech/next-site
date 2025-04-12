@@ -82,7 +82,7 @@ const Hero = () => {
               whileHover="hover"
               className="mt-8 bg-[var(--primary-teal)] text-white px-8 py-3 rounded-lg font-medium shadow-md"
             >
-              Let's Get Started!
+              Let&apos;s Get Started!
             </motion.button>
           </motion.div>
 
